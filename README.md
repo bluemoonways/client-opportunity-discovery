@@ -72,6 +72,12 @@ This project demonstrates practical experience in:
 * Lead Generation
 * Personalized Outreach
 * Process Automation
-  
 
-#bluemoonways
+## 👨‍💻 Author
+
+**Faheem Abbas**
+
+AI Automation | n8n | AI Workflows | Business Process Automation
+
+#n8n #AIAutomation #GoogleGemini #LeadGeneration #LeadQualification #WorkflowAutomation #Automation #ArtificialIntelligence #bluemoonways
+  
