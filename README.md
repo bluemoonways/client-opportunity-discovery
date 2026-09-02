@@ -18,7 +18,7 @@ It:
 
 ## ⚙️ Workflow
 
-**Google Sheets → Website → HTML Extraction → AI Business Analysis → Personalized Outreach → Gmail**
+![Client Opportunity Discovery Workflow](screenshots/Client-Opertunities-Discovery-flowchart.png)
 
 ## 🤖 AI Capabilities
 
