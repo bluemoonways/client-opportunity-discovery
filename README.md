@@ -52,7 +52,7 @@ It can help an AI automation consultant quickly discover potential opportunities
 
 A sanitized n8n workflow file is included for portfolio demonstration.
 
-For custom implementation or commercial use, [please [Contact me]."](https://wa.me/923111700076)
+For custom implementation or commercial use, [please [Contact me on whatsapp]."](https://wa.me/923111700076)
 
 👉 [View / Download Workflow JSON](Client Opertunities Discovery.json)
 
