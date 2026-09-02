@@ -48,15 +48,14 @@ Instead of manually visiting every potential client's website and researching wh
 
 It can help an AI automation consultant quickly discover potential opportunities and start personalized conversations with prospects.
 
-## 🔐 Setup
+## 🚀 Workflow JSON
 
-Before using the workflow, configure your own:
+A sanitized n8n workflow file is included for portfolio demonstration.
 
-* Google Sheets credentials
-* Google Gemini credentials
-* Gmail credentials
-* Google Sheet ID
-* WhatsApp CTA number
+For custom implementation or commercial use, [please [Contact me]."](https://wa.me/923111700076)
+
+👉 [View / Download Workflow JSON](Client Opertunities Discovery.json)
+
 
 The workflow JSON has been sanitized for public GitHub use. Replace the `YOUR_*` placeholders with your own configuration inside n8n.
 
