@@ -20,6 +20,12 @@ It:
 
 ![Client Opportunity Discovery Workflow](screenshots/Client-Opertunities-Discovery-flowchart.png)
 
+## 📧 Example Output
+
+The workflow generates a personalized outreach email based on the client's website content and identifies three relevant automation opportunities.
+
+![Example Email Output](./screenshots/client-opportunity-discovery-output.png)
+
 ## 🤖 AI Capabilities
 
 The AI Agent is instructed to:
@@ -55,9 +61,6 @@ A sanitized n8n workflow file is included for portfolio demonstration.
 For custom implementation or commercial use, please <strong>Contact Us:</strong> <sub><a href="https://wa.me/923111700076"><img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white&style=flat-square" alt="WhatsApp"></a></sub>
 
 👉 [View / Download Workflow JSON](Client Opertunities Discovery.json)
-
-
-The workflow JSON has been sanitized for public GitHub use. Replace the `YOUR_*` placeholders with your own configuration inside n8n.
 
 ## 📌 Portfolio Project
 
