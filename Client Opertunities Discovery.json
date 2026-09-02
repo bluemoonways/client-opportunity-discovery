@@ -1,0 +1,241 @@
+{
+  "name": "Vendor proposal",
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ],
+      "id": "e8df9089-21e8-4972-bc10-fa2a84125de2",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1LLrBetwHJ-s7pw-FcU97siYzp9Coi7qe1LRixzGcqbU",
+          "mode": "list",
+          "cachedResultName": "Websites Search",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LLrBetwHJ-s7pw-FcU97siYzp9Coi7qe1LRixzGcqbU/edit?usp=drivesdk"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": 609652978,
+          "mode": "list",
+          "cachedResultName": "Sheet2",
+          "cachedResultUrl": "https://docs.google.com/spreadsheets/d/1LLrBetwHJ-s7pw-FcU97siYzp9Coi7qe1LRixzGcqbU/edit#gid=609652978"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.7,
+      "position": [
+        208,
+        0
+      ],
+      "id": "74646087-b5f3-4514-b275-4f5353e005fe",
+      "name": "Get row(s) in sheet",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "kYw94ZckWeI3O9F1",
+          "name": "Google Sheets account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.Websites }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        416,
+        0
+      ],
+      "id": "f5c29a15-2b04-402d-a092-20e41b754aae",
+      "name": "HTTP Request"
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "=You are an AI Automation Consultant.\n\nWebsite Title:\n{{ $json.title }}\n\nWebsite Content:\n{{ $json.paragraph.slice(0,3).join(' ') }}\n\nAnalyze the website and identify:\n\n* What the company does\n* Target audience\n* Business opportunities for automation\n\nWrite a personalized outreach email.\n\nRequirements:\n\n* Use the website title to identify the company name.\n* Mention one specific observation from the website.\n* Suggest exactly 3 relevant automation opportunities.\n* Keep the email under 150 words.\n* Use a professional and friendly tone.\n* End with a clear call-to-action.https://wa.me/923002120566?text=hi\n* Return HTML only.\n* Do not use markdown.\n\nInclude:\n\n* Greeting\n* Short introduction\n* Bullet list of 3 automation opportunities\n* Closing paragraph\n* CTA button: \"Schedule a Quick Call\"\n",
+        "options": {
+          "systemMessage": "You are an expert AI Automation Consultant.\n\nUse the website title as the company name.\n\nAnalyze the website title and content to understand the business.\n\nIdentify automation opportunities relevant to the business.\n\nWrite a personalized outreach email.\n\nKeep the email professional, concise and friendly.\n\nMention specific observations from the content.\n\nSuggest only practical automation ideas.\n\nReturn valid HTML only.\n\nDo not use Markdown."
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 3.1,
+      "position": [
+        832,
+        -16
+      ],
+      "id": "72aae090-6318-415e-bf30-ebe6bb8a3f2a",
+      "name": "AI Agent"
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $('Get row(s) in sheet').item.json.Email }}",
+        "subject": "=Automation ideas for {{ $('HTML').item.json.title }}",
+        "message": "={{ $('AI Agent').item.json.output }}",
+        "options": {
+          "appendAttribution": false
+        }
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.2,
+      "position": [
+        1200,
+        -16
+      ],
+      "id": "e0302e6b-47f5-49a3-b35f-e76458eb178d",
+      "name": "Send a message",
+      "webhookId": "3feb23c7-e7ac-4945-9f19-35083ad24533",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "mEs98PU3OTT44mCd",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "extractHtmlContent",
+        "extractionValues": {
+          "values": [
+            {
+              "key": "title",
+              "cssSelector": "title"
+            },
+            {
+              "key": "h1",
+              "cssSelector": "h1"
+            },
+            {
+              "key": "h2",
+              "cssSelector": "h2",
+              "returnArray": true
+            },
+            {
+              "key": "paragraph",
+              "cssSelector": "p",
+              "returnArray": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.html",
+      "typeVersion": 1.2,
+      "position": [
+        624,
+        0
+      ],
+      "id": "77c2dda9-7bcc-4c65-a8c4-2916fd74b4a1",
+      "name": "HTML"
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+      "typeVersion": 1.1,
+      "position": [
+        544,
+        256
+      ],
+      "id": "df53f333-7153-4147-bbe8-f402ebf140c4",
+      "name": "Google Gemini Chat Model",
+      "credentials": {
+        "googlePalmApi": {
+          "id": "zMlyW9odEFcZUXxh",
+          "name": "Google Gemini(PaLM) Api account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "HTML",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTML": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Google Gemini Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "0e3c89fb-8966-473a-8e84-0c04078d6646",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "b440eb8785f7e40c141e6e61ab932dcbe3eeccde649336e1304db2ca870488c7"
+  },
+  "id": "a7NoX3eHq7M6TWTT",
+  "tags": []
+}
