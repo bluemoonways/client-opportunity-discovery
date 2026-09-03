@@ -73,8 +73,8 @@ A sanitized n8n workflow file is included for portfolio demonstration.
 
 👉 [View / Download Workflow JSON](Client-Opertunities-Discovery.json)
 
-For custom implementation or commercial use, please <strong>Contact Us:</strong> <sub><a href="https://wa.me/923002120566"><img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white&style=flat-square" alt="WhatsApp"></a></sub>
-
+For custom implementation or commercial use, please <strong>Contact Us:</strong>
+<a href="https://wa.me/923002120566"><img src="https://raw.githubusercontent.com/bluemoonways/bluemoonways/main/assets/whatsapp-logo.png" width="30" alt="WhatsApp" style="position: relative; top: 2px;"></a>   <a href="https://www.linkedin.com/in/faheem-abbas-ai-automation-specialist/"><img src="https://raw.githubusercontent.com/bluemoonways/bluemoonways/main/assets/linkedin-logo.png" width="30" alt="LinkedIn" style="position: relative; top: 2px;"></a>
 
 
 
