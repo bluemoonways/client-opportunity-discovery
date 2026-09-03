@@ -54,15 +54,7 @@ Instead of manually visiting every potential client's website and researching wh
 
 It can help an AI automation consultant quickly discover potential opportunities and start personalized conversations with prospects.
 
-## 🚀 Workflow JSON
-
-A sanitized n8n workflow file is included for portfolio demonstration.
-
-For custom implementation or commercial use, please <strong>Contact Us:</strong> <sub><a href="https://wa.me/923002120566"><img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white&style=flat-square" alt="WhatsApp"></a></sub>
-
-👉 [View / Download Workflow JSON](Client-Opertunities-Discovery.json)
-
-## 📌 Portfolio Project
+## 📌Skills Demonstrated
 
 This project demonstrates practical experience in:
 
@@ -73,11 +65,24 @@ This project demonstrates practical experience in:
 * Personalized Outreach
 * Process Automation
 
+## 🚀 Project Implementation
+
+This project demonstrates how potential clients can be researched automatically by analyzing their websites, identifying relevant AI automation opportunities, and generating personalized outreach emails.
+
+A sanitized n8n workflow file is included for portfolio demonstration.
+
+👉 [View / Download Workflow JSON](Client-Opertunities-Discovery.json)
+
+For custom implementation or commercial use, please <strong>Contact Us:</strong> <sub><a href="https://wa.me/923002120566"><img src="https://img.shields.io/badge/WhatsApp-25D366?logo=whatsapp&logoColor=white&style=flat-square" alt="WhatsApp"></a></sub>
+
+
+
+
 ## 👨‍💻 Author
 
 **Faheem Abbas**
 
-AI Automation | n8n | AI Workflows | Business Process Automation
+AI Automation Specialist | n8n Expert | AI Agents | AI-Powered Business Automation | Lead Generation | API Integrations | WhatsApp Automation
 
-#n8n #AIAutomation #GoogleGemini #LeadGeneration #LeadQualification #WorkflowAutomation #Automation #ArtificialIntelligence #bluemoonways
+**#n8n #AIAutomation #GoogleGemini #LeadGeneration #LeadQualification #WorkflowAutomation #Automation #ArtificialIntelligence #bluemoonways**
   
